@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TruthLens | Historial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="brand-mark">TL</span>
+      <span>TruthLens</span>
+    </a>
+    <nav class="nav">
+      <a href="/">Analizar</a>
+      <a href="/history.html" class="active">Historial</a>
+      <a href="/dashboard.html">Dashboard</a>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <section class="page-heading">
+      <p class="eyebrow">Registro de evaluaciones</p>
+      <h1>Historial de análisis</h1>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <div>
+          <h2>Análisis guardados</h2>
+          <p>Últimos 100 registros almacenados en MongoDB.</p>
+        </div>
+        <button id="refreshHistory" class="ghost-btn" type="button">Actualizar</button>
+      </div>
+      <div id="historyContainer" class="history-list"></div>
+      <p id="historyMessage" class="message" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/history.js"></script>
+</body>
+</html>

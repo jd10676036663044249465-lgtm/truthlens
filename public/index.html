@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TruthLens | Analizador de confiabilidad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="brand-mark">TL</span>
+      <span>TruthLens</span>
+    </a>
+    <nav class="nav">
+      <a href="/" class="active">Analizar</a>
+      <a href="/history.html">Historial</a>
+      <a href="/dashboard.html">Dashboard</a>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <section class="intro">
+      <div>
+        <p class="eyebrow">Lógica matemática aplicada a la desinformación</p>
+        <h1>Analiza noticias, enlaces e imágenes con reglas claras y resultados explicables.</h1>
+      </div>
+      <div class="formula-card">
+        <span>Expresión lógica principal</span>
+        <strong>(A AND B AND C) AND NOT(D OR E)</strong>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <form id="analysisForm" class="panel analyzer-panel">
+        <div class="panel-header">
+          <div>
+            <h2>Nuevo análisis</h2>
+            <p>Ingresa al menos una noticia, una URL o una imagen.</p>
+          </div>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Tipo de entrada">
+          <button class="tab active" type="button" data-tab="text">Noticia</button>
+          <button class="tab" type="button" data-tab="url">URL</button>
+          <button class="tab" type="button" data-tab="image">Imagen</button>
+        </div>
+
+        <div class="tab-panel active" data-panel="text">
+          <label for="text">Texto de la noticia</label>
+          <textarea id="text" name="text" rows="10" placeholder="Pega aquí el contenido de la noticia..."></textarea>
+        </div>
+
+        <div class="tab-panel" data-panel="url">
+          <label for="url">URL de la noticia</label>
+          <input id="url" name="url" type="url" placeholder="https://medio.com/noticia">
+        </div>
+
+        <div class="tab-panel" data-panel="image">
+          <label for="image">Imagen asociada</label>
+          <div class="file-drop">
+            <input id="image" name="image" type="file" accept="image/png,image/jpeg,image/webp,image/gif">
+            <span>Selecciona una imagen JPG, PNG, WEBP o GIF</span>
+          </div>
+          <p id="fileName" class="file-name"></p>
+        </div>
+
+        <div class="form-actions">
+          <button class="primary-btn" type="submit">Analizar confiabilidad</button>
+          <button class="ghost-btn" type="reset">Limpiar</button>
+        </div>
+
+        <p id="formMessage" class="message" aria-live="polite"></p>
+      </form>
+
+      <section class="panel result-panel" id="resultPanel">
+        <div class="empty-state">
+          <div class="empty-icon">?</div>
+          <h2>Resultado pendiente</h2>
+          <p>Cuando ejecutes un análisis, aquí aparecerán el porcentaje, la clasificación, las variables lógicas y las razones.</p>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

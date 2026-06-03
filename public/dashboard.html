@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TruthLens | Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="brand-mark">TL</span>
+      <span>TruthLens</span>
+    </a>
+    <nav class="nav">
+      <a href="/">Analizar</a>
+      <a href="/history.html">Historial</a>
+      <a href="/dashboard.html" class="active">Dashboard</a>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <section class="page-heading">
+      <p class="eyebrow">Vista administrativa</p>
+      <h1>Dashboard de confiabilidad</h1>
+    </section>
+
+    <section id="statsGrid" class="stats-grid"></section>
+
+    <section class="dashboard-grid">
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>Clasificaciones</h2>
+            <p>Distribución de resultados registrados.</p>
+          </div>
+        </div>
+        <div id="classificationChart" class="bars"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>Variables lógicas</h2>
+            <p>Frecuencia de señales detectadas.</p>
+          </div>
+        </div>
+        <div id="variablesChart" class="bars"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <div>
+          <h2>Últimos análisis</h2>
+          <p>Resumen reciente de actividad.</p>
+        </div>
+      </div>
+      <div id="latestList" class="history-list compact"></div>
+      <p id="dashboardMessage" class="message" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>
